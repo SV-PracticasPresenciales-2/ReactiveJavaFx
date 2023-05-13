@@ -24,24 +24,7 @@ public class AppController {
         loadingTask = new LoadingTask(username.getText());
         pbBar.progressProperty().unbind();
         pbBar.progressProperty().bind(loadingTask.progressProperty());
-        loadingTask.messageProperty().addListener((observableValue, s, t1) -> {
-                if(t1.equals("no")){
-                    Alert alert;
-                    alert = new Alert(Alert.AlertType.ERROR);
-                    alert.setTitle("Error");
-                    alert.setHeaderText("Username not found");
-                    alert.setContentText("BAD");
 
-                    alert.showAndWait();
-                } else if(t1.equals("ok")){
-                    Alert alert;
-                    alert = new Alert(Alert.AlertType.ERROR);
-                    alert.setTitle("OK");
-                    alert.setHeaderText("OK");
-                    alert.setContentText("OK");
-                    alert.showAndWait();
-                }
-        });
         new Thread(loadingTask).start();
     }
 }

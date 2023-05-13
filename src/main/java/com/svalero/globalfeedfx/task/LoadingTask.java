@@ -70,7 +70,7 @@ public class LoadingTask extends Task<Integer> {
                     @Override
                     public void run() {
                         FXMLLoader loader = new FXMLLoader();
-                        loader.setLocation(R.getUI("userInfo.fxml"));
+                        loader.setLocation(R.getUI("userDetails.fxml"));
                         loader.setController(new UserInfoController(user, postList));
                         VBox vbox = null;
                         try {
