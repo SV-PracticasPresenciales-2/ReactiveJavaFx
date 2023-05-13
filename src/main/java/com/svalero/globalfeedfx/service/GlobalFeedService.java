@@ -6,13 +6,18 @@ import com.svalero.globalfeedfx.domain.Post;
 import com.svalero.globalfeedfx.domain.User;
 import okhttp3.OkHttpClient;
 import io.reactivex.Observable;
+import okhttp3.ResponseBody;
 import okhttp3.logging.HttpLoggingInterceptor;
+import retrofit2.Call;
+import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 
+import java.io.IOException;
+
 public class GlobalFeedService {
-    private String GLOBAL_FEED_API = "localhost:8081";
+    private String GLOBAL_FEED_API = "http://localhost:8081";
     private GlobalFeedAPI globalFeedAPI;
 
     public GlobalFeedService(){
